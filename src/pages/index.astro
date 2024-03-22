@@ -5,17 +5,19 @@ import Layout from '../layouts/main.astro';
 // Component Imports
 import Button from '../components/Button.astro';
 
+// Sections
+import CoverImageSection from '../components/CoverImageSection.astro';
+import SongsSection from '../components/SongsSection.astro';
+import VideosSection from '../components/VideosSection.astro';
+import SocialLinksSection from '../components/SocialLinksSection.astro';
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
 <Layout content={{ title: 'AGUIRRE' }}>
-	<div class="relative">
-		<img class="w-screen h-[760px] object-cover object-center blur-sm mb-20" src="/public/aguirre.png" />
-		<img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" src="/public/aguirre-logo.png">
-	</div>
-	<div class="flex flex-col w-screen items-center mb-20 space-y-10">
-		<h1 class="text-5xl font-bold text-red-600">Nuevas canciones</h1>
-		<iframe class="w-1/2" style="border-radius:12px" src="https://open.spotify.com/embed/album/2BKfuZRUh7kHymIT9zJuLO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-	</div>
+	<CoverImageSection />
+	<SongsSection />
+	<VideosSection />
+	<SocialLinksSection />
 </Layout>
