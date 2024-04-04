@@ -15,8 +15,8 @@ import SocialLinksSection from '../components/SocialLinksSection.astro';
 
 <Layout content={{ title: 'AGUIRRE' }}>
 	<CoverImageSection />
-	<AboutSection />
 	<SongsSection />
+	<AboutSection />
 	<VideosSection />
 	<SocialLinksSection />
 </Layout>
@@ -109,6 +109,7 @@ import SocialLinksSection from '../components/SocialLinksSection.astro';
 h1 {
 	font-family: BuiltTitling;
 	position: relative;
+	@apply text-red-600 font-bold lg:text-7xl text-2xl text-center;
 }
 
 h1::before {
@@ -122,6 +123,16 @@ h1::before {
 	transform: translate(-50%, -50%);
 	background-color: lightgray;
 	z-index: -1;
+}
+
+h2 {
+	font-family: BuiltTitling;
+	@apply text-gray-700 font-medium lg:text-6xl text-xl text-center;
+}
+
+h3 {
+	font-family: BuiltTitling;
+	@apply text-red-600 font-medium lg:text-5xl text-lg text-center;
 }
 
 p {
