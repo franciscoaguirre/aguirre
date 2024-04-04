@@ -10,16 +10,18 @@
 let timer = document.querySelector('#timer');
 
 setInterval(() => {
-  const deadline = new Date("18 April 2024").getTime();
-  const millisToDeadline = deadline - new Date().getTime();
-  const totalSeconds = millisToDeadline / 1000;
-  const seconds = Math.trunc(totalSeconds % 60).toString().padStart(2, "0");
-  const totalMinutes = totalSeconds / 60;
-  const minutes = Math.trunc(totalMinutes % 60).toString().padStart(2, "0");
-  const totalHours = totalMinutes / 60;
-  const hours = Math.trunc(totalHours % 24).toString().padStart(2, "0");
-  const days = Math.trunc(totalHours / 24).toString().padStart(2, "0");
-  const timerText = `${days}:${hours}:${minutes}:${seconds}`;
-  timer.textContent = timerText;
+  if (timer !== null) {
+    const deadline = new Date("18 April 2024").getTime();
+    const millisToDeadline = deadline - new Date().getTime();
+    const totalSeconds = millisToDeadline / 1000;
+    const seconds = Math.trunc(totalSeconds % 60).toString().padStart(2, "0");
+    const totalMinutes = totalSeconds / 60;
+    const minutes = Math.trunc(totalMinutes % 60).toString().padStart(2, "0");
+    const totalHours = totalMinutes / 60;
+    const hours = Math.trunc(totalHours % 24).toString().padStart(2, "0");
+    const days = Math.trunc(totalHours / 24).toString().padStart(2, "0");
+    const timerText = `${days}:${hours}:${minutes}:${seconds}`;
+    timer.textContent = timerText;
+  }
 }, 1000);
 </script>
