@@ -108,6 +108,20 @@ import SocialLinksSection from '../components/SocialLinksSection.astro';
 
 h1 {
 	font-family: BuiltTitling;
+	position: relative;
+}
+
+h1::before {
+	content: '';
+	width: 120%;
+	border: 1px lightgray solid;
+	position: absolute;
+	height: 10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: lightgray;
+	z-index: -1;
 }
 
 p {
