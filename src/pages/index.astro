@@ -4,6 +4,7 @@ import Layout from '../layouts/main.astro';
 
 // Sections
 import CoverImageSection from '../components/CoverImageSection.astro';
+import NavBar from '../components/NavBar.astro';
 import AboutSection from '../components/AboutSection.astro';
 import SongsSection from '../components/SongsSection.astro';
 import VideosSection from '../components/VideosSection.astro';
@@ -15,6 +16,7 @@ import SocialLinksSection from '../components/SocialLinksSection.astro';
 
 <Layout content={{ title: 'AGUIRRE' }}>
 	<CoverImageSection />
+	<NavBar />
 	<SongsSection />
 	<AboutSection />
 	<VideosSection />
@@ -137,5 +139,14 @@ h3 {
 
 p {
 	font-family: Superior;
+}
+
+nav a {
+	font-family: BuiltTitling;
+	@apply p-4 text-4xl text-white mx-4;
+}
+
+nav a:hover {
+	@apply bg-red-700;
 }
 </style>
