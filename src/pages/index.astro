@@ -111,7 +111,8 @@ import SocialLinksSection from '../components/SocialLinksSection.astro';
 h1 {
 	font-family: BuiltTitling;
 	position: relative;
-	@apply text-red-600 font-bold lg:text-7xl text-2xl text-center;
+	@apply text-red-600 font-bold text-4xl text-center z-10;
+	@apply lg:text-7xl;
 }
 
 h1::before {
@@ -129,12 +130,14 @@ h1::before {
 
 h2 {
 	font-family: BuiltTitling;
-	@apply text-gray-700 font-medium lg:text-6xl text-xl text-center;
+	@apply text-gray-700 font-medium text-4xl text-center;
+	@apply lg:text-6xl;
 }
 
 h3 {
 	font-family: BuiltTitling;
-	@apply text-red-600 font-medium lg:text-5xl text-lg text-center;
+	@apply text-red-600 font-medium text-xl text-center;
+	@apply lg:text-5xl;
 }
 
 p {
@@ -143,7 +146,8 @@ p {
 
 nav a {
 	font-family: BuiltTitling;
-	@apply p-4 text-4xl text-white mx-4;
+	@apply p-4 text-xl text-white;
+	@apply lg:text-3xl lg:mx-4 lg:h-full;
 }
 
 nav a:hover {
