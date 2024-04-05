@@ -20,16 +20,16 @@ import Countdown from '../components/Countdown.astro';
 	</div>
 </section>
 
-<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+<script is:inline src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 <script>
-window.onSpotifyIframeApiReady = (IFrameAPI) => {
+(window as unknown as any).onSpotifyIframeApiReady = (IFrameAPI: any) => {
 	const element = document.getElementById('embed-iframe');
 	const options = {
 		uri: 'spotify:album:2BKfuZRUh7kHymIT9zJuLO',
 		width: '100%',
 		height: '100%',
 	};
-	const callback = (EmbedController) => {};
+	const callback = (EmbedController: any) => {};
 	IFrameAPI.createController(element, options, callback);
 };
 </script>
