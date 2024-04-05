@@ -1,6 +1,36 @@
-<section id="video" class="flex flex-col items-center space-y-4 lg:space-y-10 w-full py-8 lg:py-16 bg-[url('/red-bg-image.webp')] bg-cover bg-no-repeat">
+---
+import { Image } from 'astro:assets';
+import RedBackgroundImage from '../images/red-bg-image.webp';
+---
+
+<section id="video" class="relative flex flex-col items-center space-y-4 lg:space-y-10 w-full py-8 lg:py-16">
+  <Image src={RedBackgroundImage} alt="" class="absolute w-full h-full object-cover" />
   <h1 class="text-gray-600">Último videoclip</h1>
   <div class="w-[90%] h-[240px] lg:w-2/3 rounded-lg lg:h-[560px] z-10">
-    <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/-TpPbvQCo6Y?si=hakyzp6kiuBmOl9r" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/-TpPbvQCo6Y?si=hakyzp6kiuBmOl9r" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+    <!-- Reference: https://vumbnail.com/examples/srcdoc-iframe-for-lighthouse -->
+    <iframe
+        class="w-full h-full rounded-lg"
+        srcdoc="
+            <a
+                href='https://www.youtube.com/embed/-TpPbvQCo6Y?autoplay=1'
+                class='full'
+            >
+                <img
+                    src='https://vumbnail.com/-TpPbvQCo6Y.jpg'
+                    class='full'
+                />
+                <svg
+                    version='1.1'
+                    viewBox='0 0 68 48'
+                    width='68px'
+                    style='position: relative;'
+                >
+                    <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                    <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                </svg>
+            </a>
+        "
+    ></iframe>
   </div>
 </section>
