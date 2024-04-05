@@ -20,7 +20,7 @@ import Countdown from '../components/Countdown.astro';
 	</div>
 </section>
 
-<script is:inline src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+<script type="text/partytown" is:inline src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 <script>
 (window as unknown as any).onSpotifyIframeApiReady = (IFrameAPI: any) => {
 	const element = document.getElementById('embed-iframe');
