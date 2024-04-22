@@ -2,7 +2,7 @@
 	<h3>Próxima en:</h3>
   <div class="w-full flex flex-col items-center">
   	<h2 id="timer">00:00:00</h2>
-    <h3 class="lg:text-2xl">18 Abril 2024</h3>
+    <h3 class="lg:text-2xl">2 Mayo 2024</h3>
   </div>
 </div>
 
@@ -11,7 +11,7 @@ let timer = document.querySelector('#timer');
 
 setInterval(() => {
   if (timer !== null) {
-    const deadline = new Date("18 April 2024").getTime();
+    const deadline = new Date("2 May 2024").getTime();
     const millisToDeadline = deadline - new Date().getTime();
     const totalSeconds = millisToDeadline / 1000;
     const seconds = Math.trunc(totalSeconds % 60).toString().padStart(2, "0");
