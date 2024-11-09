@@ -1,0 +1,33 @@
+<div class="h-36 lg:h-auto lg:w-1/2 flex flex-col items-center bg-gray-200 rounded-lg justify-center space-y-4">
+	<h3>En vivo</h3>
+  <div class="w-full flex flex-col items-center">
+  	<h2 id="timer">00:00:00</h2>
+    <h3 class="lg:text-2xl">6 Diciembre 2024 a las 21 hs</h3>
+  </div>
+  <div>
+    <h2 class="lg:text-xl">Cervecería Punto Rojo</h2>
+    <h2 class="lg:text-xl">Avda Rivera 2078 entre Salterain y Pablo de María</h2>
+    <h2 class="lg:text-xl">Reservas 099 268 006</h2>
+  </div>
+  <h2 class="lg:text-lg">Produce desierto del fénix</h2>
+</div>
+
+<script>
+let timer = document.querySelector('#timer');
+
+setInterval(() => {
+  if (timer !== null) {
+    const deadline = new Date("6 December 2024 21:00:00").getTime();
+    const millisToDeadline = deadline - new Date().getTime();
+    const totalSeconds = millisToDeadline / 1000;
+    const seconds = Math.trunc(totalSeconds % 60).toString().padStart(2, "0");
+    const totalMinutes = totalSeconds / 60;
+    const minutes = Math.trunc(totalMinutes % 60).toString().padStart(2, "0");
+    const totalHours = totalMinutes / 60;
+    const hours = Math.trunc(totalHours % 24).toString().padStart(2, "0");
+    const days = Math.trunc(totalHours / 24).toString().padStart(2, "0");
+    const timerText = `${days}:${hours}:${minutes}:${seconds}`;
+    timer.textContent = timerText;
+  }
+}, 1000);
+</script>
